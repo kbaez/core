@@ -42,6 +42,8 @@ public class NotaService {
 
     public boolean borrar(String nombre, long id){
         try{
+            Nota nota = repositorio.findByNombreAndId(nombre,id);
+            repositorio.delete(nota);
             return true;
         }catch (Exception e){
             return false;
@@ -49,7 +51,6 @@ public class NotaService {
     }
 
     public List<MNota> obtener(){
-        List<MNota> notas = null;
-        return notas;
+        return convertidor.convertirLista(repositorio.findAll());
     }
 }
