@@ -10,7 +10,7 @@ public class Usuario {
     @Column(name="ID")
     private long id;
 
-    @Column(name="USUARIO")
+    @Column(name="USUARIO", unique = true)
     private String usuario;
 
     @Column(name="CONTRASENA")

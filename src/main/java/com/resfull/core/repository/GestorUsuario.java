@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import java.io.Serializable;
 
 @Repository("gestorUsuario")
-public class GestorUsuario extends JpaRepository<Usuario, Serializable> {
-
+public interface GestorUsuario extends JpaRepository<Usuario, Serializable> {
+    public abstract Usuario findByUsuario(String usuario);
 }
